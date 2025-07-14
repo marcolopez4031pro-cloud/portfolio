@@ -8,6 +8,9 @@ body {
 header {
   background: #d7ccc8;
   box-shadow: 0 2px 8px rgba(78, 52, 46, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .container {
@@ -29,6 +32,7 @@ h1 {
   font-weight: 700;
   margin: 0;
   color: #6d4c41;
+  letter-spacing: 2px;
 }
 
 nav ul {
@@ -43,11 +47,29 @@ nav a {
   text-decoration: none;
   color: #4e342e;
   font-weight: 600;
+  font-size: 1.1rem;
   transition: color 0.2s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #a1887f;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
 }
 
 nav a:hover {
   color: #a1887f;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 .about-content {
@@ -70,6 +92,24 @@ section h2 {
   font-size: 2rem;
   color: #6d4c41;
   margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.social-links {
+  margin-top: 18px;
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  color: #a1887f;
+  font-size: 1.7rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-links a:hover {
+  color: #6d4c41;
+  transform: scale(1.2) rotate(-5deg);
 }
 
 .projects-grid {
@@ -84,11 +124,29 @@ section h2 {
   box-shadow: 0 2px 12px rgba(78, 52, 46, 0.07);
   padding: 28px 22px;
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 8px 24px rgba(78, 52, 46, 0.13);
+  border-color: #a1887f;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #a1887f;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-card a:hover {
+  color: #6d4c41;
+  text-decoration: underline;
 }
 
 .contact-form {
@@ -118,11 +176,12 @@ section h2 {
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .contact-form button:hover {
   background: #6d4c41;
+  transform: scale(1.05);
 }
 
 footer {
@@ -146,5 +205,9 @@ footer {
   }
   .container {
     padding: 18px 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
   }
 } 

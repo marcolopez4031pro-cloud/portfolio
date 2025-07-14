@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marc Lopez - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>Marc Lopez</h1>
+      <h1 class="animate__animated animate__fadeInDown">Marc Lopez</h1>
       <nav>
         <ul>
           <li><a href="#about">À propos</a></li>
@@ -20,7 +23,7 @@
       </nav>
     </div>
   </header>
-  <section id="about" class="container">
+  <section id="about" class="container" data-aos="fade-up">
     <div class="about-content">
       <img src="photo.png" alt="Photo de Marc Lopez" class="profile-pic">
       <div>
@@ -30,30 +33,35 @@
           Spécialisé en <strong>React</strong>, <strong>Node.js</strong> et <strong>Python</strong>, je suis toujours à la recherche de nouveaux défis.<br>
           N’hésitez pas à me contacter pour discuter de vos projets ou collaborations !
         </p>
+        <div class="social-links">
+          <a href="mailto:ton.email@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/tonprofil/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Marckingzzz" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
       </div>
     </div>
   </section>
   <section id="projects" class="container">
-    <h2>Mes Projets</h2>
+    <h2 data-aos="fade-right">Mes Projets</h2>
     <div class="projects-grid">
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
         <h3>Mon Blog Tech</h3>
         <p>Un blog personnel sur les technologies web, réalisé avec Next.js et Tailwind CSS.</p>
         <a href="https://github.com/Marckingzzz/mon-blog-tech" target="_blank">Voir le code</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
         <h3>Gestionnaire de tâches</h3>
         <p>Application web pour organiser ses tâches, avec React et Firebase.</p>
         <a href="https://github.com/Marckingzzz/gestionnaire-taches" target="_blank">Voir le code</a>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
         <h3>Portfolio interactif</h3>
         <p>Ce site portfolio, responsive et moderne, 100% fait main !</p>
         <a href="https://marckingzzz.github.io/portfolio/" target="_blank">Voir le site</a>
       </div>
     </div>
   </section>
-  <section id="contact" class="container">
+  <section id="contact" class="container" data-aos="fade-up">
     <h2>Contact</h2>
     <form class="contact-form" action="mailto:ton.email@gmail.com" method="POST" enctype="text/plain">
       <input type="text" name="Nom" placeholder="Votre nom" required>
@@ -61,15 +69,15 @@
       <textarea name="Message" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
-    <p>
-      <a href="mailto:ton.email@gmail.com">ton.email@gmail.com</a> <br>
-      <a href="https://www.linkedin.com/in/tonprofil/" target="_blank">LinkedIn</a>
-    </p>
   </section>
   <footer>
     <div class="container">
       <p>&copy; 2024 Marc Lopez. Tous droits réservés.</p>
     </div>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html> 
