@@ -22,10 +22,14 @@
   </header>
   <section id="about" class="container">
     <div class="about-content">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Photo de Marc Lopez" class="profile-pic">
+      <img src="photo.png" alt="Photo de Marc Lopez" class="profile-pic">
       <div>
         <h2>À propos de moi</h2>
-        <p>Développeur passionné par la création de solutions web modernes et élégantes. J'aime transformer des idées en expériences numériques uniques.</p>
+        <p>
+          Développeur web passionné, je m’appelle Marc Lopez. J’adore créer des sites modernes, performants et accessibles.<br>
+          Spécialisé en <strong>React</strong>, <strong>Node.js</strong> et <strong>Python</strong>, je suis toujours à la recherche de nouveaux défis.<br>
+          N’hésitez pas à me contacter pour discuter de vos projets ou collaborations !
+        </p>
       </div>
     </div>
   </section>
@@ -33,27 +37,34 @@
     <h2>Mes Projets</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <h3>Projet 1</h3>
-        <p>Un site e-commerce moderne avec React et Node.js.</p>
+        <h3>Mon Blog Tech</h3>
+        <p>Un blog personnel sur les technologies web, réalisé avec Next.js et Tailwind CSS.</p>
+        <a href="https://github.com/Marckingzzz/mon-blog-tech" target="_blank">Voir le code</a>
       </div>
       <div class="project-card">
-        <h3>Projet 2</h3>
-        <p>Application mobile de gestion de tâches intuitive.</p>
+        <h3>Gestionnaire de tâches</h3>
+        <p>Application web pour organiser ses tâches, avec React et Firebase.</p>
+        <a href="https://github.com/Marckingzzz/gestionnaire-taches" target="_blank">Voir le code</a>
       </div>
       <div class="project-card">
-        <h3>Projet 3</h3>
-        <p>Portfolio interactif avec animations CSS avancées.</p>
+        <h3>Portfolio interactif</h3>
+        <p>Ce site portfolio, responsive et moderne, 100% fait main !</p>
+        <a href="https://marckingzzz.github.io/portfolio/" target="_blank">Voir le site</a>
       </div>
     </div>
   </section>
   <section id="contact" class="container">
     <h2>Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Votre nom" required>
-      <input type="email" placeholder="Votre email" required>
-      <textarea placeholder="Votre message" required></textarea>
+    <form class="contact-form" action="mailto:ton.email@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Nom" placeholder="Votre nom" required>
+      <input type="email" name="Email" placeholder="Votre email" required>
+      <textarea name="Message" placeholder="Votre message" required></textarea>
       <button type="submit">Envoyer</button>
     </form>
+    <p>
+      <a href="mailto:ton.email@gmail.com">ton.email@gmail.com</a> <br>
+      <a href="https://www.linkedin.com/in/tonprofil/" target="_blank">LinkedIn</a>
+    </p>
   </section>
   <footer>
     <div class="container">
