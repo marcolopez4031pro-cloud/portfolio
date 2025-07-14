@@ -11,9 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container">
-      <h1 class="animate__animated animate__fadeInDown">Marc Lopez</h1>
+      <div class="logo">Marc<span>Lopez</span></div>
       <nav>
         <ul>
           <li><a href="#about">À propos</a></li>
@@ -23,8 +23,16 @@
       </nav>
     </div>
   </header>
-  <section id="about" class="container" data-aos="fade-up">
-    <div class="about-content">
+  <section class="hero">
+    <div id="particles-js"></div>
+    <div class="container hero-content">
+      <h1 class="animate__animated animate__fadeInDown">Développez l’avenir avec moi</h1>
+      <p class="animate__animated animate__fadeInUp">Créateur de solutions web innovantes, performantes et élégantes.</p>
+      <a href="#contact" class="cta-btn animate__animated animate__fadeInUp">Contactez-moi</a>
+    </div>
+  </section>
+  <section id="about" class="about-section" data-aos="fade-up">
+    <div class="container about-content">
       <img src="photo.png" alt="Photo de Marc Lopez" class="profile-pic">
       <div>
         <h2>À propos de moi</h2>
@@ -41,34 +49,38 @@
       </div>
     </div>
   </section>
-  <section id="projects" class="container">
-    <h2 data-aos="fade-right">Mes Projets</h2>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Mon Blog Tech</h3>
-        <p>Un blog personnel sur les technologies web, réalisé avec Next.js et Tailwind CSS.</p>
-        <a href="https://github.com/Marckingzzz/mon-blog-tech" target="_blank">Voir le code</a>
-      </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Gestionnaire de tâches</h3>
-        <p>Application web pour organiser ses tâches, avec React et Firebase.</p>
-        <a href="https://github.com/Marckingzzz/gestionnaire-taches" target="_blank">Voir le code</a>
-      </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <h3>Portfolio interactif</h3>
-        <p>Ce site portfolio, responsive et moderne, 100% fait main !</p>
-        <a href="https://marckingzzz.github.io/portfolio/" target="_blank">Voir le site</a>
+  <section id="projects" class="projects-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Mes Projets</h2>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Mon Blog Tech</h3>
+          <p>Un blog personnel sur les technologies web, réalisé avec Next.js et Tailwind CSS.</p>
+          <a href="https://github.com/Marckingzzz/mon-blog-tech" target="_blank">Voir le code</a>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Gestionnaire de tâches</h3>
+          <p>Application web pour organiser ses tâches, avec React et Firebase.</p>
+          <a href="https://github.com/Marckingzzz/gestionnaire-taches" target="_blank">Voir le code</a>
+        </div>
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+          <h3>Portfolio interactif</h3>
+          <p>Ce site portfolio, responsive et moderne, 100% fait main !</p>
+          <a href="https://marckingzzz.github.io/portfolio/" target="_blank">Voir le site</a>
+        </div>
       </div>
     </div>
   </section>
-  <section id="contact" class="container" data-aos="fade-up">
-    <h2>Contact</h2>
-    <form class="contact-form" action="mailto:ton.email@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="Nom" placeholder="Votre nom" required>
-      <input type="email" name="Email" placeholder="Votre email" required>
-      <textarea name="Message" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+  <section id="contact" class="contact-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact-form" action="mailto:ton.email@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="Nom" placeholder="Votre nom" required>
+        <input type="email" name="Email" placeholder="Votre email" required>
+        <textarea name="Message" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
   </section>
   <footer>
     <div class="container">
@@ -76,8 +88,12 @@
     </div>
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     AOS.init();
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('particles.js loaded');
+    });
   </script>
 </body>
 </html> 
