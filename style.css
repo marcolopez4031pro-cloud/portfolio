@@ -283,7 +283,7 @@ footer {
   font-weight: 700;
   line-height: 1.25;
   margin: 0 0 25px 0;
-  color: #ffffff; /* La première partie du titre en blanc */
+  color: #DC1FFF; /* La première partie du titre en rose/violet */
 }
 
 /* La deuxième partie du titre (dans le span) est mise en valeur */
@@ -299,6 +299,7 @@ footer {
   max-width: 650px; /* Limiter la largeur pour le confort de lecture */
   margin-bottom: 40px;
   color: #e0e0f0; /* Un gris très clair pour contraster avec le titre */
+  text-align: justify;
 }
 
 /* Le bouton d'appel à l'action est plus visible et moderne */
