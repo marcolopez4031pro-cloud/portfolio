@@ -275,6 +275,7 @@ footer {
   padding: 0 20px;
   position: relative;
   z-index: 2;
+  text-align: initial;
 }
 
 /* Le titre principal : plus grand, plus audacieux */
@@ -299,7 +300,7 @@ footer {
   max-width: 650px; /* Limiter la largeur pour le confort de lecture */
   margin-bottom: 40px;
   color: #e0e0f0; /* Un gris très clair pour contraster avec le titre */
-  text-align: justify;
+  text-align: justify !important;
 }
 
 /* Le bouton d'appel à l'action est plus visible et moderne */
