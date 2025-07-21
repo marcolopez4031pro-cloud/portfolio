@@ -252,3 +252,99 @@ footer {
     grid-template-columns: 1fr;
   }
 } 
+
+/* =================================
+   REFONTE SECTION HÉROS (TITRE)
+   ================================= */
+
+/* On réinitialise la mise en page de la section */
+.hero {
+  position: relative;
+  display: flex; /* Utilise Flexbox pour un alignement vertical facile */
+  align-items: center;
+  min-height: 90vh; /* La section prendra presque toute la hauteur de l'écran */
+  padding: 120px 0;
+  text-align: left; /* Alignement à gauche sur grand écran */
+  overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Le conteneur du contenu gagne en largeur */
+.hero-content {
+  max-width: 1100px; /* Plus d'espace pour le titre */
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Le titre principal : plus grand, plus audacieux */
+.hero h1 {
+  font-size: 4rem; /* Taille de police augmentée */
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 25px 0;
+  color: #ffffff; /* La première partie du titre en blanc */
+}
+
+/* La deuxième partie du titre (dans le span) est mise en valeur */
+.hero h1 span {
+  display: block; /* La met sur une nouvelle ligne */
+  color: #00ffcc; /* La couleur verte "tech" */
+}
+
+/* Le paragraphe est plus lisible */
+.hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 650px; /* Limiter la largeur pour le confort de lecture */
+  margin-bottom: 40px;
+  color: #e0e0f0; /* Un gris très clair pour contraster avec le titre */
+}
+
+/* Le bouton d'appel à l'action est plus visible et moderne */
+.cta-btn {
+  font-weight: 700;
+  padding: 16px 45px;
+  border-radius: 50px; /* Forme "pilule" */
+  text-decoration: none;
+  display: inline-block;
+  background: linear-gradient(45deg, #a259f7, #00ffcc); /* Dégradé des couleurs du site */
+  color: #1a1a2e; /* Couleur de fond sombre pour le texte */
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(162, 89, 247, 0.3);
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
+}
+
+
+/* =================================
+   ADAPTATIONS POUR MOBILES
+   ================================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 75vh;
+    padding: 80px 0;
+    text-align: center; /* On recentre sur les petits écrans pour l'équilibre */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Taille de titre adaptée au mobile */
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero h1 span {
+     /* Sur mobile, on laisse le texte s'afficher naturellement */
+    display: inline;
+    color: #00ffcc;
+  }
+} 
