@@ -57,6 +57,10 @@ nav a:hover {
   margin: 0 auto;        /* Centre horizontalement */
   text-align: center;    /* Centre le texte */
   padding: 60px 20px 40px 20px; /* Ajoute de l'espace autour */
+  display: flex;         /* Utilise flexbox pour un meilleur centrage */
+  flex-direction: column; /* Direction verticale */
+  align-items: center;   /* Centre horizontalement les éléments */
+  justify-content: center; /* Centre verticalement */
 }
 
 .hero-content h1 {
@@ -82,6 +86,8 @@ nav a:hover {
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(0,255,163,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block; /* Assure que le bouton se comporte comme un bloc inline */
+  text-align: center;    /* Centre le texte dans le bouton */
 }
 .cta-btn:hover {
   transform: scale(1.05);
