@@ -109,10 +109,11 @@
 .process-section .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Aligne le contenu à gauche */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
 }
 
 .section-title {
@@ -127,12 +128,12 @@
   align-items: flex-start;
   margin-bottom: 80px;
   gap: 30px;
-  justify-content: center; /* Centre le contenu horizontalement */
+  justify-content: flex-start; /* Aligne le contenu à gauche */
   max-width: 1000px; /* Limite la largeur pour un meilleur centrage */
-  margin-left: auto;
+  margin-left: 0; /* Supprime la marge automatique */
   margin-right: auto;
   width: 100%; /* Assure que la largeur est bien prise en compte */
-  padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
+  padding: 0; /* Supprime le padding */
 }
 
 .process-step:last-child {
@@ -170,9 +171,9 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 20px;
-  justify-items: center; /* Centre les éléments de la grille */
+  justify-items: start; /* Aligne les éléments à gauche */
   max-width: 800px; /* Limite la largeur pour un meilleur centrage */
-  margin-left: auto;
+  margin-left: 0; /* Supprime la marge automatique */
   margin-right: auto;
 }
 
