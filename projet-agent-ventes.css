@@ -152,18 +152,18 @@
 /* Input Sources */
 .input-sources {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
   margin-top: 20px;
-  max-width: 800px;
-  margin-left: 200px;
-  margin-right: 200px;
+  max-width: 1000px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .source-card {
   background: #181A20;
   border-radius: 15px;
-  padding: 30px;
+  padding: 40px 35px;
   text-align: center;
   border: 1px solid rgba(0, 255, 163, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
