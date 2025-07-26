@@ -7,16 +7,11 @@
   background: #23263B;
 }
 
-.process-section .container {
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Conteneur responsive centré */
+/* Conteneur responsive centré - même système que style.css */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0; /* Supprime le padding pour éliminer la marge supplémentaire */
+  padding: 0 20px;
 }
 
 .project-hero {
@@ -168,24 +163,27 @@
 /* Input Sources - CENTRAGE CORRIGÉ */
 .input-sources {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
   margin-top: 20px;
-  width: 100%;
 }
 
 .source-card {
-  background: #181A20;
-  border-radius: 15px;
-  padding: 40px 35px;
+  background: #23263B;
+  border-radius: 18px;
+  padding: 28px 22px;
   text-align: center;
-  border: 1px solid rgba(0, 255, 163, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 12px rgba(0,255,163,0.07);
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
 }
 
 .source-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 255, 163, 0.2);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(220,31,255,0.13);
+  border-color: #00FFA3;
 }
 
 .source-icon {
