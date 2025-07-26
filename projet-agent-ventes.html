@@ -22,6 +22,9 @@
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
+      <div class="theme-toggle">
+        <i class="fas fa-palette" id="theme-icon"></i>
+      </div>
     </div>
   </header>
 
@@ -177,6 +180,34 @@
       duration: 800,
       easing: 'ease-in-out',
       once: true
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to 'default'
+    const currentTheme = localStorage.getItem('theme') || 'default';
+    if (currentTheme === 'alternate') {
+      html.setAttribute('data-theme', 'alternate');
+      themeIcon.className = 'fas fa-sun';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      
+      if (currentTheme === 'alternate') {
+        // Switch to default theme
+        html.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-palette';
+        localStorage.setItem('theme', 'default');
+      } else {
+        // Switch to alternate theme
+        html.setAttribute('data-theme', 'alternate');
+        themeIcon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'alternate');
+      }
     });
   </script>
 </body>
