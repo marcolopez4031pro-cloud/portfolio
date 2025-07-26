@@ -1,10 +1,22 @@
 /* Styles spécifiques pour la page projet agent IA */
 
+/* Reset des marges pour éviter les marges indésirables */
+.process-section {
+  margin: 0;
+  padding: 80px 0;
+  background: #23263B;
+}
+
+.process-section .container {
+  margin: 0 auto;
+  padding: 0;
+}
+
 /* Conteneur responsive centré */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* espace latéral fluide */
+  padding: 0; /* Supprime le padding pour éliminer la marge supplémentaire */
 }
 
 .project-hero {
@@ -120,7 +132,7 @@
 .process-step {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin: 0 0 80px 0;
   gap: 30px;
 }
 
