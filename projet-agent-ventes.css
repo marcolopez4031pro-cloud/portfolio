@@ -1,10 +1,10 @@
 /* Styles spécifiques pour la page projet agent IA */
 
-/* Conteneur responsive centré */
+/* Conteneur simple */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 50px;
 }
 
 .project-hero {
@@ -153,15 +153,12 @@
   margin-bottom: 25px;
 }
 
-/* Input Sources - VERSION SIMPLE ET ÉTIRÉE */
+/* Input Sources - SOLUTION SIMPLE ET EFFICACE */
 .input-sources {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
   margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .source-card {
@@ -171,6 +168,8 @@
   text-align: center;
   border: 1px solid rgba(0, 255, 163, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
+  width: 400px;
+  flex-shrink: 0;
 }
 
 .source-card:hover {
@@ -246,9 +245,8 @@
   gap: 25px;
   border: 1px solid rgba(220, 31, 255, 0.2);
   width: 100%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .result-icon {
@@ -378,7 +376,13 @@
   }
   
   .input-sources {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .source-card {
+    width: 100%;
+    max-width: 400px;
   }
   
   .result-card {
