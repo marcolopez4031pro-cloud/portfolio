@@ -115,6 +115,9 @@
   align-items: flex-start;
   margin-bottom: 80px;
   gap: 30px;
+  max-width: 1000px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .process-step:last-child {
@@ -152,6 +155,9 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-top: 20px;
+  max-width: 800px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .source-card {
