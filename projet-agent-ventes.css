@@ -112,7 +112,7 @@
 
 .process-step {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 80px;
   gap: 30px;
   max-width: 1000px;
@@ -146,8 +146,9 @@
 .step-content h3 {
   color: #00FFA3;
   font-size: 1.8rem;
-  margin: 0;
-  line-height: 1;
+  margin-bottom: 25px;
+  margin-top: -10px; /* Ajustement pour aligner avec le numéro */
+  line-height: 1.2; /* Améliore l'alignement vertical */
 }
 
 /* Input Sources */
@@ -155,7 +156,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin-top: 45px;
+  margin-top: 20px;
   max-width: 800px;
   margin-left: 200px;
   margin-right: 200px;
@@ -207,7 +208,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 45px;
+  margin-top: 20px;
 }
 
 .feature-item {
