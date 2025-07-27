@@ -112,7 +112,7 @@
 
 .process-step {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 80px;
   gap: 30px;
   max-width: 1000px;
