@@ -22,9 +22,6 @@
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="theme-toggle">
-        <i class="fas fa-palette" id="theme-icon"></i>
-      </div>
     </div>
   </header>
 
@@ -159,11 +156,6 @@
           <h4>Application Mobile</h4>
           <p>Interface mobile pour la gestion en déplacement</p>
         </div>
-        <div class="improvement-card" data-aos="zoom-in" data-aos-delay="400">
-          <i class="fas fa-share-alt"></i>
-          <h4>Réseaux Sociaux</h4>
-          <p>Intégration Instagram, WhatsApp et autres plateformes sociales</p>
-        </div>
       </div>
     </div>
   </section>
@@ -180,34 +172,6 @@
       duration: 800,
       easing: 'ease-in-out',
       once: true
-    });
-
-    // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or default to 'default'
-    const currentTheme = localStorage.getItem('theme') || 'default';
-    if (currentTheme === 'alternate') {
-      html.setAttribute('data-theme', 'alternate');
-      themeIcon.className = 'fas fa-sun';
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      
-      if (currentTheme === 'alternate') {
-        // Switch to default theme
-        html.removeAttribute('data-theme');
-        themeIcon.className = 'fas fa-palette';
-        localStorage.setItem('theme', 'default');
-      } else {
-        // Switch to alternate theme
-        html.setAttribute('data-theme', 'alternate');
-        themeIcon.className = 'fas fa-sun';
-        localStorage.setItem('theme', 'alternate');
-      }
     });
   </script>
 </body>
