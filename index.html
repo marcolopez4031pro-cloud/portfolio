@@ -90,10 +90,10 @@
   <section id="contact" class="contact-section" data-aos="fade-up">
     <div class="container">
       <h2>Contact</h2>
-      <form class="contact-form" action="mailto:marco.lopez.4031.pro@gmail.com" method="POST" enctype="text/plain">
-        <input type="text" name="Nom" placeholder="Votre nom" required>
-        <input type="email" name="Email" placeholder="Votre email" required>
-        <textarea name="Message" placeholder="Votre message" required></textarea>
+      <form class="contact-form" action="https://formspree.io/f/xayzqjqj" method="POST">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" placeholder="Votre message" required></textarea>
         <button type="submit">Envoyer</button>
       </form>
     </div>
@@ -109,6 +109,55 @@
     AOS.init();
     particlesJS.load('particles-js', 'particles.json', function() {
       console.log('particles.js loaded');
+    });
+
+    // Gestion du formulaire de contact
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      
+      // Afficher un état de chargement
+      submitButton.textContent = 'Envoi en cours...';
+      submitButton.disabled = true;
+      
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Succès
+          submitButton.textContent = 'Message envoyé !';
+          submitButton.style.background = 'linear-gradient(90deg, #00FFA3 0%, #00FFA3 100%)';
+          this.reset();
+          
+          // Remettre le bouton à l'état initial après 3 secondes
+          setTimeout(() => {
+            submitButton.textContent = originalText;
+            submitButton.style.background = 'linear-gradient(90deg, #00FFA3 0%, #DC1FFF 100%)';
+            submitButton.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error('Erreur lors de l\'envoi');
+        }
+      })
+      .catch(error => {
+        // Erreur
+        submitButton.textContent = 'Erreur - Réessayez';
+        submitButton.style.background = 'linear-gradient(90deg, #ff6b6b 0%, #ff6b6b 100%)';
+        
+        setTimeout(() => {
+          submitButton.textContent = originalText;
+          submitButton.style.background = 'linear-gradient(90deg, #00FFA3 0%, #DC1FFF 100%)';
+          submitButton.disabled = false;
+        }, 3000);
+      });
     });
   </script>
 </body>
