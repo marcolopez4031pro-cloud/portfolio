@@ -106,9 +106,33 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      disable: 'mobile' // Désactive AOS sur mobile pour éviter les conflits
+    });
     particlesJS.load('particles-js', 'particles.json', function() {
       console.log('particles.js loaded');
+    });
+
+    // Ajustement du scroll pour les liens de navigation
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = targetElement.offsetTop - headerHeight ; // 50px d'offset supplémentaire
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
 
     // Gestion du formulaire de contact

@@ -11,16 +11,33 @@ body {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 15px 0;
+}
+
+/* Centrage de la navigation */
+.header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #00FFA3;
   letter-spacing: 2px;
+  position: absolute;
+  left: 0;
 }
 .logo span {
   color: #DC1FFF;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
@@ -36,11 +53,33 @@ nav a {
   color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
   position: relative;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-nav a:hover {
+
+nav a:hover,
+nav a:focus,
+nav a:active {
   color: #00FFA3;
+  background: rgba(0, 255, 163, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 255, 163, 0.2);
+  transform: none;
+}
+
+nav a:visited {
+  color: #fff;
 }
 
 .hero {
@@ -85,13 +124,23 @@ nav a:hover {
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(0,255,163,0.15);
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: inline-block; /* Assure que le bouton se comporte comme un bloc inline */
-  text-align: center;    /* Centre le texte dans le bouton */
+  transition: transform 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.cta-btn:hover {
+
+.cta-btn:hover,
+.cta-btn:focus,
+.cta-btn:active {
   transform: scale(1.05);
-  box-shadow: 0 8px 32px rgba(220,31,255,0.15);
+  box-shadow: 0 8px 32px rgba(220,31,255,0.25);
 }
 
 #particles-js {
@@ -228,12 +277,21 @@ nav a:hover {
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: transform 0.2s ease;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.contact-form button:hover {
+
+.contact-form button:hover,
+.contact-form button:focus,
+.contact-form button:active {
   background: #00FFA3;
   color: #23263B;
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 163, 0.3);
 }
 
 footer {
@@ -354,6 +412,26 @@ footer {
      /* Sur mobile, on laisse le texte s'afficher naturellement */
     display: inline;
     color: #00ffcc;
+  }
+
+  /* Navigation centrée sur mobile */
+  .header .container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .logo {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 1rem;
   }
 } 
 
