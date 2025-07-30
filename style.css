@@ -478,9 +478,9 @@ footer {
 /* Timeline horizontale avec nœuds lumineux */
 .timeline-container {
   position: relative;
-  max-width: 1400px; /* Au lieu de 1200px */
-  margin: 0 auto 80px auto;
-  padding: 60px 60px; /* Plus de padding */
+  max-width: 90vw; /* Utilise 90% de la largeur de l'écran */
+  margin: 0 auto 8rem auto; /* Augmenté de 5rem à 8rem */
+  padding: 3rem 2rem; /* Padding relatif */
   display: flex;
   justify-content: space-between; /* Positionne aux extrémités */
   align-items: center;
@@ -488,13 +488,14 @@ footer {
 
 .timeline-line {
   position: absolute;
-  top: 22%; /* Aligné avec le centre des cercles */
+  top: 50%; /* Centre parfaitement la ligne */
   left: 0;
   right: 0;
-  height: 3px;
+  height: 0.2rem; /* Utilise rem au lieu de pixels */
   background: linear-gradient(90deg, #00FFA3, #DC1FFF);
-  box-shadow: 0 0 20px rgba(0, 255, 163, 0.5);
+  box-shadow: 0 0 1.25rem rgba(0, 255, 163, 0.5);
   z-index: 1;
+  transform: translateY(-50%); /* Centre parfaitement la ligne */
 }
 
 .timeline-node {
@@ -502,23 +503,32 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 20px; /* Réduire de 30px à 20px */
+  margin: 0 1.25rem; /* Utilise rem au lieu de pixels */
   z-index: 2;
+  flex: 1; /* Permet aux nœuds de s'adapter */
+  max-width: 15%; /* Limite la largeur maximale */
+  /* Hauteur fixe pour assurer l'alignement */
+  height: 8rem;
 }
 
 .node-circle {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem; /* Utilise rem au lieu de pixels */
+  height: 2.5rem;
   border-radius: 50%;
   background: linear-gradient(45deg, #00FFA3, #DC1FFF);
-  box-shadow: 0 0 15px rgba(0, 255, 163, 0.6);
-  margin-bottom: 20px;
+  box-shadow: 0 0 0.9rem rgba(0, 255, 163, 0.6);
+  margin-bottom: 1.25rem;
   transition: all 0.3s ease;
   position: relative;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Positionnement pour centrer parfaitement sur la ligne */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .node-number {
@@ -529,17 +539,17 @@ footer {
 }
 
 .timeline-node:hover .node-circle {
-  transform: scale(1.3);
-  box-shadow: 0 0 25px rgba(220, 31, 255, 0.8);
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 0 0 1.6rem rgba(220, 31, 255, 0.8);
 }
 
 .node-label {
   text-align: center;
-  width: 210px; /* Au lieu de 200px */
-  height: 120px;
-  padding: 15px;
+  width: 100%; /* Utilise 100% de la largeur du nœud */
+  min-height: 7.5rem; /* Hauteur minimale en rem */
+  padding: 0.9rem;
   background: rgba(35, 38, 59, 0.8);
-  border-radius: 10px;
+  border-radius: 0.6rem;
   border: 1px solid rgba(0, 255, 163, 0.2);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -547,11 +557,17 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* Positionnement pour s'aligner sous le cercle */
+  position: absolute;
+  top: 60%; /* Positionné sous le cercle */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Légèrement plus petit que le conteneur */
 }
 
 .timeline-node:hover .node-label {
   opacity: 1;
-  transform: translateY(-5px);
+  transform: translateX(-50%) translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 255, 163, 0.2);
   border-color: rgba(0, 255, 163, 0.4);
 }
@@ -579,7 +595,9 @@ footer {
 @media (max-width: 768px) {
   .timeline-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 2.5rem;
+    max-width: 95vw;
+    padding: 2rem 1rem;
   }
   
   .timeline-line {
@@ -588,10 +606,12 @@ footer {
   
   .timeline-node {
     margin: 0;
+    max-width: 100%;
   }
   
   .node-label {
-    max-width: 280px;
+    max-width: 100%;
+    min-height: 6rem;
   }
   
   .node-label h4 {
