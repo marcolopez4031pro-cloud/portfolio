@@ -892,3 +892,144 @@ footer {
     padding: 0.25rem 0.5rem;
   }
 }
+
+/* Disclaimer Modal Styles */
+.disclaimer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.disclaimer-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.disclaimer-content {
+  background: linear-gradient(135deg, #23263B 0%, #181A20 100%);
+  border: 2px solid #00FFA3;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 255, 163, 0.2);
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.disclaimer-modal.show .disclaimer-content {
+  transform: scale(1);
+}
+
+.disclaimer-header {
+  margin-bottom: 25px;
+}
+
+.disclaimer-header i {
+  font-size: 3rem;
+  color: #00FFA3;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.disclaimer-header h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.disclaimer-body {
+  margin-bottom: 30px;
+}
+
+.disclaimer-body p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.disclaimer-body strong {
+  color: #00FFA3;
+  font-weight: 700;
+}
+
+.disclaimer-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.disclaimer-btn {
+  background: linear-gradient(90deg, #00FFA3 0%, #DC1FFF 100%);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', Arial, sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 255, 163, 0.3);
+}
+
+.disclaimer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 163, 0.4);
+}
+
+.disclaimer-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .disclaimer-content {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .disclaimer-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .disclaimer-body p {
+    font-size: 1rem;
+  }
+  
+  .disclaimer-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .disclaimer-content {
+    padding: 25px 15px;
+  }
+  
+  .disclaimer-header i {
+    font-size: 2.5rem;
+  }
+  
+  .disclaimer-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .disclaimer-body p {
+    font-size: 0.95rem;
+  }
+}

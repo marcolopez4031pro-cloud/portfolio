@@ -12,6 +12,24 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
+  <!-- Disclaimer Modal -->
+  <div id="disclaimer-modal" class="disclaimer-modal">
+    <div class="disclaimer-content">
+      <div class="disclaimer-header">
+        <i class="fas fa-desktop"></i>
+        <h3>Version Ordinateur</h3>
+      </div>
+      <div class="disclaimer-body">
+        <p>Ce site est optimisé pour les écrans d'ordinateur pour une expérience optimale.</p>
+        <p><strong>La version mobile arrive bientôt !</strong></p>
+        <p>En attendant, nous vous recommandons de consulter le site depuis un ordinateur pour profiter de toutes les fonctionnalités.</p>
+      </div>
+      <div class="disclaimer-footer">
+        <button id="disclaimer-close" class="disclaimer-btn">Compris !</button>
+      </div>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container">
       <div class="logo">Marco<span>Lopez</span></div>
@@ -371,6 +389,47 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    // Disclaimer Modal
+    document.addEventListener('DOMContentLoaded', function() {
+      const disclaimerModal = document.getElementById('disclaimer-modal');
+      const disclaimerClose = document.getElementById('disclaimer-close');
+      
+      // Vérifier si l'utilisateur a déjà vu le disclaimer dans cette session
+      const hasSeenDisclaimer = sessionStorage.getItem('disclaimerSeen');
+      
+      if (!hasSeenDisclaimer) {
+        // Afficher le disclaimer après un court délai seulement si pas déjà vu
+        setTimeout(() => {
+          disclaimerModal.classList.add('show');
+        }, 500);
+      }
+      
+      // Fermer le disclaimer
+      disclaimerClose.addEventListener('click', function() {
+        disclaimerModal.classList.remove('show');
+        // Marquer comme vu dans le sessionStorage
+        sessionStorage.setItem('disclaimerSeen', 'true');
+      });
+      
+      // Fermer le disclaimer en cliquant à l'extérieur
+      disclaimerModal.addEventListener('click', function(e) {
+        if (e.target === disclaimerModal) {
+          disclaimerModal.classList.remove('show');
+          // Marquer comme vu dans le sessionStorage
+          sessionStorage.setItem('disclaimerSeen', 'true');
+        }
+      });
+      
+      // Fermer le disclaimer avec la touche Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && disclaimerModal.classList.contains('show')) {
+          disclaimerModal.classList.remove('show');
+          // Marquer comme vu dans le sessionStorage
+          sessionStorage.setItem('disclaimerSeen', 'true');
+        }
+      });
+    });
+
     AOS.init({
       duration: 800,
       easing: 'ease-in-out',
